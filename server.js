@@ -7,7 +7,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();                // <-- must be before app.use calls
-app.use(cors({ origin: "https://https://itz-shikha-portfolio.netlify.app/.netlify.app" })); // change to your Netlify URL
+app.use(cors()); // change to your Netlify URL
+app.options('*',cors());
 app.use(express.json());              // JSON body parser
 
 // Connect to MongoDB
