@@ -1,3 +1,5 @@
+
+
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -5,10 +7,14 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
 dotenv.config();
-const app = express();
+
 
 // Middleware
-app.use(cors());
+app.use(cors({
+ origin: "https://itz-shikha-portfolio.netlify.app", // your frontend domain
+  methods: ["GET", "POST"],
+  
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
